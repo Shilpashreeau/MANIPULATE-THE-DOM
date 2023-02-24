@@ -80,13 +80,47 @@ console.log(cityLis);
   // Part 7
 /*Create a new .blog-post corresponding to the new city added in Part 6. You will have to create a new <div>with class of .blog-post, a new <h2>with text, and a new <p>with some text. Think about what order you want to create the elements, and what order you want to append them in.*/
 
+const blog=document.createElement('div');
+blog.setAttribute('class','blog-post purple');
+
+
+const h2=document.createElement('h2');
+h2.textContent="Pittsburgh";
+blog.append(h2);
+
+const p=document.createElement('p');
+p.textContent="I drove my car in narrow roads...";
+blog.append(p);
+
+//console.log(blog);
+
+const div=document.querySelector(".main");
+div.appendChild(blog);
 
   // Part 8
+  //Query select the #quote-title ID element and add a click event handler. That event handler should use the function randomQuote whenever #quote-title is clicked.
+    const quote=document.getElementById("quote-title");
+     quote.addEventListener("click", randomQuote);
+      
+     
+//Part 9
+/*Select all .blog-post class elements. Iterate through the list of .blog-post class elements and apply two event handlers to each node. The first event handler should be listening for mouseout events while the second handler should be listening for mouseenter events.
 
+The mouseout handler should toggle the class .purple
+The mouseenter handler should toggle the class .red*/
 
-  // Part 9
-
-
+const blogPosts=document.querySelectorAll(".blog-post");
+console.log(blogPosts);
+blogPosts.forEach(post=>{
+post.addEventListener('mouseout',function(){
+  console.log("purple");
+  post.classList.toggle("purple");
+})
+post.addEventListener("mouseenter",function(){
+console.log("red");
+post.classList.toggle("red");
+})
+});
 
 
 });
