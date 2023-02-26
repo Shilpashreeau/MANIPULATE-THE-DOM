@@ -95,7 +95,7 @@ blog.append(p);
 //console.log(blog);
 
 const div=document.querySelector(".main");
-div.appendChild(blog);
+div.append(blog);
 
   // Part 8
   //Query select the #quote-title ID element and add a click event handler. That event handler should use the function randomQuote whenever #quote-title is clicked.
